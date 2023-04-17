@@ -7,7 +7,7 @@
 html,
 body {
   font-family: sans-serif;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 section {
@@ -72,11 +72,16 @@ nav svg {
   color: var(--secondary-color);
   text-decoration: none;
   cursor: pointer;
+  transition: all 0.2s ease-out;
+  /* change of 'font-size' cause the movement of other 2 links, as a result of dependent position 'space-evenly',
+  using 'all' to make other hidden changes happen with '0.2s ease-out',
+  animation would be abrupt if specified 'font-size'  */
 }
 
 .links a:hover {
   /* add time delay */
-  transform: translate(-10%, -15%);
+  transform: translateY(-15%);
+  font-size: 2rem;
 }
 
 .logo {
