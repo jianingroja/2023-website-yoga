@@ -17,3 +17,24 @@ burger.addEventListener('click', () => {
 
   burger.classList.toggle('active');
 });
+
+const videos = gsap.utils.toArray('.video');
+gsap.set(videos, { opacity: 0 });
+
+//greensock.com/docs/v3/Plugins/ScrollTrigger
+https: videos.forEach(video => {
+  ScrollTrigger.create({
+    trigger: video,
+    start: 'top center',
+    end: 'bottom center',
+    markers: true,
+
+    onEnter: () => {
+      gsap.set(video, { opacity: 1 });
+      video.play();
+    },
+    onLeave: () => video.pause(),
+    onEnterBack: () => video.play(),
+    onLeaveBack: () => video.play(),
+  });
+});
