@@ -187,19 +187,34 @@ svg {
   text-align: center;
 }
 
+.story-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+}
+
 .story-description p {
-  line-height: 2rem;
+  line-height: 150%;
   font-size: 1.2rem;
   padding: 1rem;
 }
 
 .story-description img {
   /* fix the image position */
-  width: 100%;
-  height: 70vh;
-  object-fit: cover;
+  width: 50%;
   margin: 1.5rem 0;
   border-radius: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .story-description {
+    display: block;
+  }
+
+  .story-description img {
+    width: 100%;
+  }
 }
 
 .copyright {
